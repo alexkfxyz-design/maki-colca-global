@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Maki Colca Global</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .contact-layout { display:grid; grid-template-columns:1fr 1fr; min-height:100vh; }
+    .contact-info   { background:linear-gradient(160deg,#1A100A,#2C1A0E); padding:8rem 3.5rem 4rem; display:flex; flex-direction:column; justify-content:center; }
+    .contact-info h1 { color:var(--sand); margin-bottom:1.25rem; }
+    .contact-info > p{ color:rgba(242,232,217,.62); line-height:1.8; font-size:1rem; max-width:380px; }
+    .c-brand { display:flex; align-items:center; gap:.85rem; margin-bottom:2.5rem; }
+    .c-brand img { height:60px; width:60px; object-fit:contain; border-radius:50%; }
+    .c-brand-text strong { display:block; font-family:var(--font-display); font-size:1.35rem; color:var(--sand); }
+    .c-brand-text span   { font-size:.75rem; font-style:italic; color:var(--clay); }
+    .contact-details { margin-top:2.25rem; display:flex; flex-direction:column; gap:1.35rem; }
+    .contact-item    { display:flex; gap:.9rem; align-items:flex-start; }
+    .contact-item__icon  { color:var(--clay); font-size:1.15rem; margin-top:.1rem; flex-shrink:0; }
+    .contact-item__label { font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--clay); display:block; margin-bottom:.15rem; }
+    .contact-item__value { color:rgba(242,232,217,.68); font-size:.92rem; }
+    .contact-form-wrap { background:var(--sand-light); padding:8rem 3.5rem 4rem; display:flex; flex-direction:column; justify-content:center; }
+    .contact-form-wrap h2 { margin-bottom:.6rem; }
+    .contact-form-wrap > p{ font-size:.92rem; color:#5a3d28; margin-bottom:2rem; }
+    .form-success { display:none; text-align:center; padding:2rem; background:rgba(196,118,74,.08); border:1px solid rgba(196,118,74,.3); border-radius:var(--radius-lg); margin-top:1.5rem; }
+    .form-success.visible { display:block; }
+    .form-success h3 { color:var(--clay); margin-bottom:.5rem; }
+    .form-success p  { font-size:.88rem; color:#5a3d28; }
+    @media(max-width:768px){
+      .contact-layout { grid-template-columns:1fr; }
+      .contact-info  { padding:6rem 2rem 3rem; }
+      .contact-form-wrap { padding:3rem 2rem; }
+    }
+  </style>
+</head>
+<body class="page-enter">
+
+<nav class="nav scrolled" id="nav">
+  <div class="nav__logo">
+    <a href="../index.html">
+      <img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div>
+    </a>
+  </div>
+  <ul class="nav__links">
+    <li><a href="../index.html#nosotros" data-i18n="nav_nosotros">Nosotros</a></li>
+    <li><a href="catalogo.html" data-i18n="nav_catalogo">Catálogo</a></li>
+    <li><a href="artesanos.html" data-i18n="nav_artesanos">Artesanos</a></li>
+    <li><a href="../index.html#mercados" data-i18n="nav_mercados">Mercados</a></li>
+    <li><a href="#" class="active" data-i18n="nav_contacto">Contacto</a></li>
+  </ul>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      <button class="lang-btn">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span class="lang-current">🇵🇪 ES</span>
+        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div>
+        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div>
+        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+        <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+      </div>
+    </div>
+    <div class="nav__auth">
+      <a href="login.html" class="login-btn" data-i18n="nav_login">Ingresar</a>
+      <a href="register.html" class="register-btn" data-i18n="nav_register">Registrarse</a>
+    </div>
+  </div>
+  <button class="nav__burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="contact-layout">
+
+  <div class="contact-info">
+    <div class="c-brand">
+      <img src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="c-brand-text">
+        <strong>Maki Colca Global</strong>
+        <span>Bordados del Colca, Herencia que Conecta al Mundo</span>
+      </div>
+    </div>
+    <h1>Hablemos del <em>Colca</em></h1>
+    <p>¿Tienes preguntas sobre un pedido, quieres personalizar una pieza o unirte a nuestra red de bordadoras? Escríbenos.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <span class="contact-item__icon">◉</span>
+        <div><span class="contact-item__label">Email</span><span class="contact-item__value">hola@makicolcaglobal.pe</span></div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item__icon">◉</span>
+        <div><span class="contact-item__label">Ubicación</span><span class="contact-item__value">Valle del Colca, Arequipa, Perú</span></div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item__icon">◉</span>
+        <div><span class="contact-item__label">WhatsApp</span><span class="contact-item__value">+51 954 xxx xxx</span></div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item__icon">◉</span>
+        <div><span class="contact-item__label">Horario</span><span class="contact-item__value">Lun–Vie 9am–6pm (PET)</span></div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item__icon">◉</span>
+        <div><span class="contact-item__label">Idiomas</span><span class="contact-item__value">Español · English · Français · Deutsch</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form-wrap">
+    <p class="label">Formulario de contacto</p>
+    <h2>Envía tu <em>mensaje</em></h2>
+    <p>Respondemos en menos de 24 horas en cualquiera de los 4 idiomas disponibles.</p>
+    <form id="contactForm" novalidate>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="form-group"><label data-i18n="reg_name">Nombre</label><input type="text" placeholder="Tu nombre" required /></div>
+        <div class="form-group"><label data-i18n="reg_email">Email</label><input type="email" placeholder="tu@email.com" required /></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="form-group">
+          <label data-i18n="reg_country">País</label>
+          <select>
+            <option value="">Selecciona...</option>
+            <option>Estados Unidos</option><option>Francia</option><option>Alemania</option>
+            <option>Reino Unido</option><option>Japón</option><option>Canadá</option>
+            <option>Italia</option><option>España</option><option>Perú</option><option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tipo de consulta</label>
+          <select>
+            <option value="">Selecciona...</option>
+            <option>Pedido de bordados</option>
+            <option>Personalización</option>
+            <option>Unirme como artesana</option>
+            <option>Envíos internacionales</option>
+            <option>Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea placeholder="Cuéntanos sobre el bordado o artesanía que buscas..." style="min-height:120px;resize:vertical"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary form-submit">Enviar mensaje</button>
+    </form>
+    <div class="form-success" id="formSuccess">
+      <h3>◈ ¡Mensaje enviado!</h3>
+      <p>Gracias por contactar a Maki Colca Global. Te responderemos en menos de 24 horas.</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="../js/translations.js"></script>
+<script src="../js/main.js"></script>
+<script>
+document.getElementById('contactForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  e.target.style.opacity = '.4';
+  e.target.style.pointerEvents = 'none';
+  setTimeout(() => {
+    e.target.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('visible');
+  }, 700);
+});
+</script>
+</body>
+</html>

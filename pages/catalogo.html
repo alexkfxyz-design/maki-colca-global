@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo — Maki Colca Global</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .page-header { background: linear-gradient(160deg,#1A100A,#2C1A0E); padding: 8rem 2.5rem 4rem; text-align: center; border-bottom: 1px solid rgba(196,118,74,.2); }
+    .page-header h1 { color: var(--sand); margin-bottom: 1rem; }
+    .page-header p  { color: rgba(242,232,217,.6); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+    .catalog-section { padding: 5rem 0; background: var(--sand-light); min-height: 60vh; }
+    .empty-state { text-align:center; padding:4rem 2rem; color:#7a5c42; }
+    .empty-state h3 { margin-bottom:.5rem; }
+  </style>
+</head>
+<body class="page-enter">
+
+<!-- NAV -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav__logo">
+    <a href="../index.html">
+      <img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div>
+    </a>
+  </div>
+  <ul class="nav__links">
+    <li><a href="../index.html#nosotros" data-i18n="nav_nosotros">Nosotros</a></li>
+    <li><a href="#" class="active" data-i18n="nav_catalogo">Catálogo</a></li>
+    <li><a href="artesanos.html" data-i18n="nav_artesanos">Artesanos</a></li>
+    <li><a href="../index.html#mercados" data-i18n="nav_mercados">Mercados</a></li>
+    <li><a href="contacto.html" data-i18n="nav_contacto">Contacto</a></li>
+  </ul>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      <button class="lang-btn">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span class="lang-current">🇵🇪 ES</span>
+        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div>
+        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div>
+        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+        <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+      </div>
+    </div>
+    <div class="nav__auth">
+      <a href="login.html" class="login-btn" data-i18n="nav_login">Ingresar</a>
+      <a href="register.html" class="register-btn" data-i18n="nav_register">Registrarse</a>
+    </div>
+  </div>
+  <button class="nav__burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <p class="label label--center">Maki Colca Global</p>
+  <h1 data-i18n="cat_title">Colección <em>Textil del Colca</em></h1>
+  <p>Prendas y bordados únicos del Valle del Colca. Cada pieza tiene historia, origen verificado y envío internacional.</p>
+</div>
+
+<section class="catalog-section">
+  <div class="container">
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all" data-i18n="cat_filter_all">Todos</button>
+      <button class="filter-btn" data-filter="prendas"  data-i18n="cat_filter1">Prendas Tradicionales</button>
+      <button class="filter-btn" data-filter="disenios" data-i18n="cat_filter2">Diseños de Bordados</button>
+      <button class="filter-btn" data-filter="telar"    data-i18n="cat_filter3">Decoraciones en Telar</button>
+      <button class="filter-btn" data-filter="bordado"  data-i18n="cat_filter4">Bordado Tradicional</button>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:none;padding-top:0">
+      <p data-i18n="footer_copy">© 2025 Maki Colca Global · Valle del Colca, Arequipa, Perú</p>
+      <p><a href="../index.html" style="color:rgba(242,232,217,.45)">← Volver al inicio</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/translations.js"></script>
+<script src="../js/main.js"></script>
+<script>
+const products = [
+  // PRENDAS TRADICIONALES
+  { id:1,  cat:'prendas',  badge:'Más vendido',      name:'Pollera Bordada Collagua',        artisan:'María Quispe · Chivay',          price:'USD 185', photo:'../img/ROPA1.png' },
+  { id:2,  cat:'prendas',  badge:null,               name:'Chaquetilla Tradicional',         artisan:'Elena Condori · Yanque',         price:'USD 220', photo:'../img/ROPA2.png' },
+  { id:3,  cat:'prendas',  badge:'Edición especial', name:'Prenda de Dama Ceremonial',       artisan:'Rosa Mamani · Cabanaconde',      price:'USD 310', photo:'../img/prenda_dama.png' },
+  { id:4,  cat:'prendas',  badge:null,               name:'Conjunto Festivo del Colca',      artisan:'María Quispe · Chivay',          price:'USD 260', photo:'../img/ROPA3.png' },
+  { id:5,  cat:'prendas',  badge:null,               name:'Prendas Tradicionales Collagua',  artisan:'Elena Condori · Yanque',         price:'USD 195', photo:'../img/Prendas_Tradicionales.png' },
+
+  // DISEÑOS DE BORDADOS
+  { id:6,  cat:'disenios', badge:'Artesanal',        name:'Diseño Floral Andino',            artisan:'Elena Condori · Yanque',         price:'USD 65',  photo:'../img/Disenios_bordados.png' },
+  { id:7,  cat:'disenios', badge:null,               name:'Motivo Geométrico Collagua',      artisan:'María Quispe · Chivay',          price:'USD 78',  photo:'../img/Disenios_bordados1.png' },
+  { id:8,  cat:'disenios', badge:'Premium',          name:'Diseño Cóndor y Flora',           artisan:'Rosa Mamani · Cabanaconde',      price:'USD 95',  photo:'../img/Disenios_bordados2.png' },
+  { id:9,  cat:'disenios', badge:null,               name:'Panel Decorativo Bordado',        artisan:'Elena Condori · Yanque',         price:'USD 55',  photo:'../img/Disenio1.png' },
+  { id:10, cat:'disenios', badge:null,               name:'Diseño Ceremonial Andino',        artisan:'María Quispe · Chivay',          price:'USD 88',  photo:'../img/Disenio3.png' },
+
+  // DECORACIONES EN TELAR
+  { id:11, cat:'telar',    badge:'Más vendido',      name:'Tapiz del Cañón del Colca',       artisan:'Rosa Mamani · Cabanaconde',      price:'USD 120', photo:'../img/Decoraciones_en_Telar.jpg' },
+  { id:12, cat:'telar',    badge:null,               name:'Manta de Alpaca Collagua',        artisan:'Rosa Mamani · Cabanaconde',      price:'USD 85',  photo:'../img/MantadeAlpacaCollagua.png' },
+
+  // BORDADO TRADICIONAL
+  { id:13, cat:'bordado',  badge:'Patrimonio',       name:'Bordado Collagua Tradicional',    artisan:'María Quispe · Chivay',          price:'USD 145', photo:'../img/Bordado_Tradicional.jpg' },
+  { id:14, cat:'bordado',  badge:null,               name:'Bordado Floral Ceremonial',       artisan:'Elena Condori · Yanque',         price:'USD 110', photo:'../img/bordado1.png' },
+  { id:15, cat:'bordado',  badge:'Artesanal',        name:'Cenefa Bordada del Colca',        artisan:'Rosa Mamani · Cabanaconde',      price:'USD 75',  photo:'../img/Bordado2.png' },
+  { id:16, cat:'bordado',  badge:null,               name:'Bordado Geométrico Andino',       artisan:'María Quispe · Chivay',          price:'USD 90',  photo:'../img/bordado3.png' },
+];
+
+function renderProducts(filter) {
+  const grid = document.getElementById('productsGrid');
+  const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  if (!list.length) {
+    grid.innerHTML = '<div class="empty-state"><h3>Sin resultados</h3><p>No hay productos en esta categoría.</p></div>';
+    return;
+  }
+  grid.innerHTML = list.map((p, i) => `
+    <div class="product-card" style="animation:fadeUp .55s ease ${i * 0.06}s both">
+      <div class="product-card__img">
+        ${p.badge ? `<span class="product-card__badge">${p.badge}</span>` : ''}
+        <img data-src="${p.photo}" alt="${p.name}" />
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">${p.cat}</div>
+        <h3>${p.name}</h3>
+        <p class="product-card__artisan">◎ ${p.artisan}</p>
+        <div class="product-card__footer">
+          <span class="product-card__price">${p.price}</span>
+          <button class="product-card__btn" data-i18n="btn_detail">Ver detalle</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  lazyLoadImages(grid);
+  if (window.applyTranslations) applyTranslations();
+}
+
+document.getElementById('filterBar').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(btn.dataset.filter);
+});
+
+renderProducts('all');
+
+const urlCat = new URLSearchParams(location.search).get('cat');
+if (urlCat) {
+  const btn = document.querySelector(`[data-filter="${urlCat}"]`);
+  if (btn) btn.click();
+}
+</script>
+</body>
+</html>

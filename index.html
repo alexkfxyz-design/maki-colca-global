@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maki Colca Global — Bordados del Colca al Mundo</title>
+  <meta name="description" content="Plataforma de bordados del Valle del Colca. Prendas tradicionales, diseños andinos, envío mundial." />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav__logo"><a href="index.html"><img class="nav__logo-img" src="assets/logo.png" alt="Maki Colca Global" /><div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div></a></div>
+  <ul class="nav__links">
+    <li><a href="#nosotros" data-i18n="nav_nosotros">Nosotros</a></li>
+    <li><a href="pages/catalogo.html" data-i18n="nav_catalogo">Catálogo</a></li>
+    <li><a href="#artesanos" data-i18n="nav_artesanos">Artesanos</a></li>
+    <li><a href="#mercados" data-i18n="nav_mercados">Mercados</a></li>
+    <li><a href="pages/contacto.html" data-i18n="nav_contacto">Contacto</a></li>
+  </ul>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      <button class="lang-btn" aria-label="Idioma">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span class="lang-current">🇵🇪 ES</span>
+        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div>
+        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div>
+        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+        <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+      </div>
+    </div>
+    <div class="nav__auth">
+      <a href="pages/login.html" class="login-btn" data-i18n="nav_login">Ingresar</a>
+      <a href="pages/register.html" class="register-btn" data-i18n="nav_register">Registrarse</a>
+    </div>
+  </div>
+  <button class="nav__burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow" data-i18n="hero_eyebrow">Valle del Colca · Arequipa, Perú</p>
+    <h1 class="hero__title" data-i18n="hero_title">Bordados que <em>narran la historia</em> de los Andes</h1>
+    <p class="hero__subtitle" data-i18n="hero_subtitle">Conectamos bordadoras del Colca con compradores internacionales.</p>
+    <div class="hero__actions">
+      <a href="pages/catalogo.html" class="btn btn--primary" data-i18n="hero_btn1">Explorar catálogo</a>
+      <a href="#nosotros" class="btn btn--ghost" data-i18n="hero_btn2">Conocer el proyecto</a>
+    </div>
+  </div>
+  <div class="hero__stats">
+    <div class="stat"><span class="stat__num" data-target="178">0</span><span class="stat__label" data-i18n="stat1_label">mercados internacionales</span></div>
+    <div class="stat"><span class="stat__num" data-target="74" data-suffix="B USD">0</span><span class="stat__label" data-i18n="stat2_label">exportaciones Perú 2024</span></div>
+    <div class="stat"><span class="stat__num" data-target="7" data-suffix=" países">0</span><span class="stat__label" data-i18n="stat3_label">destinos prioritarios</span></div>
+  </div>
+</header>
+
+<section class="section section--sand" id="nosotros">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+      <div>
+        <p class="label reveal" data-i18n="mission_label">Nuestra misión</p>
+        <h2 class="reveal" data-i18n="mission_title">Conectamos el arte del Colca con el <em>mundo entero</em></h2>
+        <p style="font-size:1rem;color:#5a3d28;line-height:1.8;margin:1.25rem 0 2rem" class="reveal" data-i18n="mission_text">Maki Colca Global digitaliza los bordados del Valle del Colca y los conecta directamente con compradores internacionales.</p>
+        <ul style="display:flex;flex-direction:column;gap:1.25rem">
+          <li style="display:flex;gap:1rem;align-items:flex-start" class="reveal"><span style="color:#C4764A;font-size:1.2rem;flex-shrink:0">◎</span><div><strong style="display:block;margin-bottom:.2rem" data-i18n="feat1_title">Bordados certificados</strong><p style="font-size:.88rem;color:#5a3d28;line-height:1.6" data-i18n="feat1_desc">Cada pieza viene con certificado de origen.</p></div></li>
+          <li style="display:flex;gap:1rem;align-items:flex-start" class="reveal"><span style="color:#C4764A;font-size:1.2rem;flex-shrink:0">◎</span><div><strong style="display:block;margin-bottom:.2rem" data-i18n="feat2_title">Compra directa</strong><p style="font-size:.88rem;color:#5a3d28;line-height:1.6" data-i18n="feat2_desc">Sin intermediarios. El precio justo llega íntegro.</p></div></li>
+          <li style="display:flex;gap:1rem;align-items:flex-start" class="reveal"><span style="color:#C4764A;font-size:1.2rem;flex-shrink:0">◎</span><div><strong style="display:block;margin-bottom:.2rem" data-i18n="feat3_title">Envío internacional</strong><p style="font-size:.88rem;color:#5a3d28;line-height:1.6" data-i18n="feat3_desc">Calculamos costos automáticamente.</p></div></li>
+          <li style="display:flex;gap:1rem;align-items:flex-start" class="reveal"><span style="color:#C4764A;font-size:1.2rem;flex-shrink:0">◎</span><div><strong style="display:block;margin-bottom:.2rem" data-i18n="feat4_title">Impacto real</strong><p style="font-size:.88rem;color:#5a3d28;line-height:1.6" data-i18n="feat4_desc">Cada compra financia comunidades bordadoras.</p></div></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div style="background:#2C1A0E;border-radius:12px;padding:2.25rem;border:1px solid rgba(196,118,74,.2);position:relative;overflow:hidden">
+          <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(196,118,74,.15),transparent 70%);border-radius:50%"></div>
+          <p style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#C4764A;margin-bottom:1rem">Propuesta de Valor</p>
+          <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-style:italic;color:#F2E8D9;line-height:1.7">"Conectamos bordadoras del Colca con compradores internacionales, ofreciendo bordados auténticos, historias únicas y una experiencia de compra simple, segura y significativa."</p>
+          <div style="height:1px;background:rgba(196,118,74,.22);margin:1.6rem 0"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div><strong style="display:block;font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#C4764A;line-height:1">+15.6%</strong><span style="font-size:.72rem;color:rgba(242,232,217,.58);display:block;margin-top:.2rem">crecimiento exportaciones Perú 2024</span></div>
+            <div><strong style="display:block;font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#C4764A;line-height:1">S/ 93M</strong><span style="font-size:.72rem;color:rgba(242,232,217,.58);display:block;margin-top:.2rem">Perú Moda Deco 2025</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" id="catalogo">
+  <div class="container">
+    <p class="label reveal" data-i18n="cat_label">Catálogo</p>
+    <h2 class="reveal" data-i18n="cat_title">Colección <em>Textil del Colca</em></h2>
+    <div class="categories reveal" style="margin-top:2rem">
+      <a href="pages/catalogo.html?cat=prendas" class="cat-card"><img class="cat-card__img" data-src="img/ROPA1.png" alt="Prendas Tradicionales" /><div class="cat-card__body"><span class="cat-card__tag" data-i18n="cat_filter1">Prendas Tradicionales</span><h3>Vestimenta del Colca</h3><p>Polleras, chaquetas y prendas bordadas con técnicas ancestrales Collagua.</p><span class="cat-card__cta">Ver colección →</span></div></a>
+      <a href="pages/catalogo.html?cat=disenios" class="cat-card"><img class="cat-card__img" data-src="img/Disenios_bordados.png" alt="Diseños de Bordados" /><div class="cat-card__body"><span class="cat-card__tag" data-i18n="cat_filter2">Diseños de Bordados</span><h3>Motivos andinos</h3><p>Diseños geométricos y florales en hilo de seda y alpaca.</p><span class="cat-card__cta">Ver colección →</span></div></a>
+      <a href="pages/catalogo.html?cat=telar" class="cat-card"><img class="cat-card__img" data-src="img/Decoraciones_en_Telar.jpg" alt="Decoraciones en Telar" /><div class="cat-card__body"><span class="cat-card__tag" data-i18n="cat_filter3">Decoraciones en Telar</span><h3>Tapices y decoración</h3><p>Tapices y mantas tejidas en telar tradicional andino.</p><span class="cat-card__cta">Ver colección →</span></div></a>
+      <a href="pages/catalogo.html?cat=bordado" class="cat-card"><img class="cat-card__img" data-src="img/Bordado_Tradicional.jpg" alt="Bordado Tradicional" /><div class="cat-card__body"><span class="cat-card__tag" data-i18n="cat_filter4">Bordado Tradicional</span><h3>Arte del bordado</h3><p>Bordados Collagua, Patrimonio Cultural del Perú.</p><span class="cat-card__cta">Ver colección →</span></div></a>
+    </div>
+    <div class="text-center reveal" style="margin-top:2.5rem"><a href="pages/catalogo.html" class="btn btn--primary" data-i18n="cat_see_all">Ver todo el catálogo</a></div>
+  </div>
+</section>
+
+<section class="section section--sand" id="artesanos">
+  <div class="container">
+    <p class="label reveal" data-i18n="art_label">Comunidad</p>
+    <h2 class="reveal" data-i18n="art_title">Conoce a las <em>bordadoras</em></h2>
+    <p class="section-desc reveal" data-i18n="art_desc">Cada bordado lleva el nombre y la historia de quien lo creó.</p>
+    <div class="artisans-grid">
+      <div class="artisan-card reveal" onclick="openArtisanModal({img:'img/Artesano1.png',tag:'Bordadora · Prendas Tradicionales',name:'María Quispe Ccoa',village:'Chivay, Valle del Colca',bio:'Bordadora con más de 28 años de experiencia en los bordados Collagua, declarados Patrimonio Cultural de la Nación. Sus polleras y mantas son reconocidas en ferias de Lima, Madrid y Nueva York.',story:'Aprendió el oficio de su madre a los 10 años. Cada motivo narra una historia del Valle: el cóndor, las flores silvestres, los cerros tutelares de Chivay.',metrics:[{value:\"47\",label:\"piezas vendidas\"},{value:\"12\",label:\"países destino\"},{value:\"4.9★\",label:\"valoración\"}],products:['Polleras bordadas','Mantas de alpaca','Chaquetillas','Cintillos','Telas decorativas']})">
+        <div class="artisan-card__img"><img data-src="img/Artesano1.png" alt="María Quispe Ccoa" /></div>
+        <div class="artisan-card__body"><h3>María Quispe Ccoa</h3><span class="artisan-card__village">Chivay, Valle del Colca</span><p>Bordadora con 28 años en bordados Collagua, Patrimonio Cultural. Especialista en polleras y prendas ceremoniales.</p><div><span class="artisan-card__tag">Prendas</span><span class="artisan-card__tag">Bordado</span><span class="artisan-card__tag">47 ventas</span></div><a class="artisan-card__link" data-i18n="art_see_profile">Ver perfil completo →</a></div>
+      </div>
+      <div class="artisan-card reveal" onclick="openArtisanModal({img:'img/Artesano2.png',tag:'Bordadora · Diseños de Bordados',name:'Elena Condori Huanca',village:'Yanque, Valle del Colca',bio:'Maestra en diseños florales y motivos geométricos. Trabaja con hilos de seda teñidos con plantas naturales: cochinilla, índigo y muña andina.',story:'Elena heredó los secretos del color de su abuela. Sus diseños combinan iconografía precolombina Collagua con flores silvestres del cañón. Cada pieza tarda entre 2 y 8 semanas.',metrics:[{value:\"63\",label:\"piezas vendidas\"},{value:\"15\",label:\"países destino\"},{value:\"5.0★\",label:\"valoración\"}],products:['Diseños florales','Bordados geométricos','Tintes naturales','Sombreros bordados','Cintillos']})">
+        <div class="artisan-card__img"><img data-src="img/Artesano2.png" alt="Elena Condori Huanca" /></div>
+        <div class="artisan-card__body"><h3>Elena Condori Huanca</h3><span class="artisan-card__village">Yanque, Valle del Colca</span><p>Especialista en diseños florales y geométricos. Usa tintes naturales — cochinilla, índigo, muña — para sus motivos bordados.</p><div><span class="artisan-card__tag">Diseños</span><span class="artisan-card__tag">Tintes naturales</span><span class="artisan-card__tag">63 ventas</span></div><a class="artisan-card__link" data-i18n="art_see_profile">Ver perfil completo →</a></div>
+      </div>
+      <div class="artisan-card reveal" onclick="openArtisanModal({img:'img/Artesano3.png',tag:'Tejedora · Decoraciones en Telar',name:'Rosa Mamani Ticona',village:'Cabanaconde, Valle del Colca',bio:'Tejedora en telar de cintura desde los 12 años. Sus tapices capturan el paisaje del Cañón del Colca usando lana de alpaca con técnicas preincas.',story:'Rosa vive en Cabanaconde, puerta del cañón más profundo del mundo. Enseña la técnica del telar de cintura a jóvenes de la comunidad.',metrics:[{value:\"39\",label:\"piezas vendidas\"},{value:\"9\",label:\"países destino\"},{value:\"4.8★\",label:\"valoración\"}],products:['Tapices decorativos','Mantas de alpaca','Bolsos','Decoraciones','Cinturones']})">
+        <div class="artisan-card__img"><img data-src="img/Artesano3.png" alt="Rosa Mamani Ticona" /></div>
+        <div class="artisan-card__body"><h3>Rosa Mamani Ticona</h3><span class="artisan-card__village">Cabanaconde, Valle del Colca</span><p>Tejedora en telar de cintura. Sus tapices reproducen el paisaje del Cañón del Colca con técnicas preincas.</p><div><span class="artisan-card__tag">Telar</span><span class="artisan-card__tag">Tapices</span><span class="artisan-card__tag">39 ventas</span></div><a class="artisan-card__link" data-i18n="art_see_profile">Ver perfil completo →</a></div>
+      </div>
+    </div>
+    <div class="text-center reveal" style="margin-top:2.5rem"><a href="pages/artesanos.html" class="btn btn--outline" data-i18n="art_see_all">Ver todas las artesanas</a></div>
+  </div>
+</section>
+
+<section class="section section--white" id="mercados">
+  <div class="container">
+    <p class="label reveal" data-i18n="mkt_label">Exportación</p>
+    <h2 class="reveal" data-i18n="mkt_title">¿A dónde <em>exportamos?</em></h2>
+    <p class="section-desc reveal" data-i18n="mkt_desc">Mercados priorizados con alta demanda de artesanía auténtica y bordados culturales peruanos.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem">
+      <div class="reveal" style="display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;border:1px solid rgba(196,118,74,.15);border-radius:12px;background:var(--sand-light);position:relative"><span style="font-size:2rem">🇺🇸</span><div><h3 style="font-size:1.05rem;margin-bottom:.2rem">Estados Unidos</h3><p style="font-size:.8rem;color:#5a3d28;line-height:1.5">Alto consumo de artesanías étnicas y mercado de decoración premium.</p></div><span style="position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C4764A;background:rgba(196,118,74,.1);padding:.22rem .55rem;border-radius:20px">Prioritario</span></div>
+      <div class="reveal" style="display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;border:1px solid rgba(196,118,74,.15);border-radius:12px;background:var(--sand-light);position:relative"><span style="font-size:2rem">🇫🇷</span><div><h3 style="font-size:1.05rem;margin-bottom:.2rem">Francia</h3><p style="font-size:.8rem;color:#5a3d28;line-height:1.5">Mercado premium de moda y decoración con identidad cultural.</p></div><span style="position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C4764A;background:rgba(196,118,74,.1);padding:.22rem .55rem;border-radius:20px">Premium</span></div>
+      <div class="reveal" style="display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;border:1px solid rgba(196,118,74,.15);border-radius:12px;background:var(--sand-light);position:relative"><span style="font-size:2rem">🇩🇪</span><div><h3 style="font-size:1.05rem;margin-bottom:.2rem">Alemania</h3><p style="font-size:.8rem;color:#5a3d28;line-height:1.5">Interés en productos sostenibles y de origen cultural verificado.</p></div><span style="position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C4764A;background:rgba(196,118,74,.1);padding:.22rem .55rem;border-radius:20px">Sostenible</span></div>
+      <div class="reveal" style="display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;border:1px solid rgba(196,118,74,.15);border-radius:12px;background:var(--sand-light);position:relative"><span style="font-size:2rem">🇯🇵</span><div><h3 style="font-size:1.05rem;margin-bottom:.2rem">Japón</h3><p style="font-size:.8rem;color:#5a3d28;line-height:1.5">Valoración de textiles tradicionales y artesanía de alto nivel.</p></div><span style="position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C4764A;background:rgba(196,118,74,.1);padding:.22rem .55rem;border-radius:20px">Alto valor</span></div>
+      <div class="reveal" style="display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;border:1px solid rgba(196,118,74,.15);border-radius:12px;background:var(--sand-light);position:relative"><span style="font-size:2rem">🇨🇦</span><div><h3 style="font-size:1.05rem;margin-bottom:.2rem">Canadá</h3><p style="font-size:.8rem;color:#5a3d28;line-height:1.5">Comercio justo y consumo responsable con fuerte conciencia social.</p></div><span style="position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C4764A;background:rgba(196,118,74,.1);padding:.22rem .55rem;border-radius:20px">Comercio justo</span></div>
+      <div class="reveal" style="display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;border:1px solid rgba(196,118,74,.15);border-radius:12px;background:var(--sand-light);position:relative"><span style="font-size:2rem">🇮🇹</span><div><h3 style="font-size:1.05rem;margin-bottom:.2rem">Italia</h3><p style="font-size:.8rem;color:#5a3d28;line-height:1.5">Demanda de textiles y diseño cultural artesanal de alta gama.</p></div><span style="position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C4764A;background:rgba(196,118,74,.1);padding:.22rem .55rem;border-radius:20px">Moda</span></div>
+      <div class="reveal" style="display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;border:1px solid rgba(196,118,74,.15);border-radius:12px;background:var(--sand-light);position:relative"><span style="font-size:2rem">🇬🇧</span><div><h3 style="font-size:1.05rem;margin-bottom:.2rem">Reino Unido</h3><p style="font-size:.8rem;color:#5a3d28;line-height:1.5">Mercado multicultural con alta demanda de productos étnicos.</p></div><span style="position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C4764A;background:rgba(196,118,74,.1);padding:.22rem .55rem;border-radius:20px">Étnico</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;padding:8rem 0;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(196,118,74,.12),transparent),linear-gradient(160deg,#1A100A,#2C1A0E)"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center">
+    <p class="label label--center label--light reveal" data-i18n="cta_label">¿Listo para empezar?</p>
+    <h2 class="reveal" style="color:#F2E8D9;max-width:560px;margin:0 auto 1.25rem" data-i18n="cta_title">Bordados del Colca <em>al mundo</em></h2>
+    <p class="reveal" style="color:rgba(242,232,217,.62);font-size:1rem;max-width:480px;margin:0 auto 2.25rem;line-height:1.75" data-i18n="cta_text">Explora nuestra colección o únete como comprador internacional.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap" class="reveal">
+      <a href="pages/catalogo.html" class="btn btn--primary" data-i18n="cta_btn1">Ver catálogo</a>
+      <a href="pages/register.html" class="btn btn--ghost" data-i18n="nav_register">Registrarse</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="assets/logo.png" alt="Maki Colca Global" /><div class="footer__logo-text"><strong>Maki Colca Global</strong><span>Valle del Colca, Perú</span></div></div>
+        <p data-i18n="footer_tagline">Bordados del Colca, Herencia que Conecta al Mundo.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col"><h4 data-i18n="footer_col1">Plataforma</h4><ul><li><a href="pages/catalogo.html" data-i18n="nav_catalogo">Catálogo</a></li><li><a href="pages/artesanos.html" data-i18n="nav_artesanos">Artesanos</a></li><li><a href="#mercados" data-i18n="nav_mercados">Mercados</a></li><li><a href="pages/register.html" data-i18n="nav_register">Registrarse</a></li></ul></div>
+        <div class="footer__col"><h4 data-i18n="footer_col2">Información</h4><ul><li><a href="#">Cómo funciona</a></li><li><a href="#">Envíos internacionales</a></li><li><a href="#">Autenticidad</a></li><li><a href="#">Comercio justo</a></li></ul></div>
+        <div class="footer__col"><h4 data-i18n="footer_col3">Contacto</h4><ul><li><a href="mailto:hola@makicolcaglobal.pe">hola@makicolcaglobal.pe</a></li><li><a href="#">Arequipa, Perú</a></li><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p data-i18n="footer_copy">© 2025 Maki Colca Global · Valle del Colca, Arequipa, Perú</p>
+      <p>PROMPERÚ · MINCETUR · Perú Moda Deco 2025</p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="artisanModal" onclick="if(event.target===this)closeArtisanModal()">
+  <div class="modal">
+    <button class="modal__close" onclick="closeArtisanModal()">✕</button>
+    <div class="modal__img"><img src="" alt="" /></div>
+    <div class="modal__body">
+      <span class="modal__tag"></span>
+      <h2></h2>
+      <span class="modal__village"></span>
+      <div class="modal__metrics"><div class="modal__metric"><strong></strong><span></span></div><div class="modal__metric"><strong></strong><span></span></div><div class="modal__metric"><strong></strong><span></span></div></div>
+      <p class="modal__para"></p>
+      <p class="modal__para" style="margin-top:.75rem"></p>
+      <p class="modal__products-title" data-i18n="art_products">Especialidades</p>
+      <div class="modal__tags"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

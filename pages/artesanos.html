@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artesanas — Maki Colca Global</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .page-header { background: linear-gradient(160deg,#1A100A,#2C1A0E); padding: 8rem 2.5rem 4rem; text-align: center; border-bottom: 1px solid rgba(196,118,74,.2); }
+    .page-header h1 { color: var(--sand); margin-bottom: 1rem; }
+    .page-header p  { color: rgba(242,232,217,.6); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+    .artisans-section { padding: 5rem 0; background: var(--sand-light); }
+
+    .profile-grid { display: grid; grid-template-columns: 360px 1fr; gap: 0; background: var(--white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(196,118,74,.1); margin-bottom: 2.5rem; transition: box-shadow .3s; }
+    .profile-grid:hover { box-shadow: 0 12px 48px rgba(196,118,74,.1); }
+    .profile-img { position: relative; min-height: 320px; background: #2C1A0E; overflow: hidden; }
+    .profile-img img { width:100%; height:100%; object-fit:cover; object-position:top; opacity:0; transition: opacity .5s ease; }
+    .profile-img img.loaded { opacity:1; }
+    .profile-body { padding: 2.5rem; }
+    .profile-tag  { font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--clay); display:block; margin-bottom:.6rem; }
+    .profile-body h2 { font-size:2rem; margin-bottom:.3rem; }
+    .profile-village { color:var(--clay); font-size:.85rem; font-weight:500; display:block; margin-bottom:1.1rem; }
+    .profile-body p  { font-size:.92rem; color:#5a3d28; line-height:1.75; margin-bottom:.9rem; }
+    .profile-skills  { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.4rem; }
+    .skill-tag { font-size:.7rem; padding:.28rem .7rem; background:rgba(196,118,74,.1); color:var(--clay); border-radius:20px; font-weight:500; }
+    .profile-metrics { display:flex; gap:2rem; }
+    .metric strong { display:block; font-family:var(--font-display); font-size:1.8rem; color:var(--clay); }
+    .metric span   { font-size:.72rem; color:#7a5c42; }
+
+    .impact-band { background:var(--bark); padding:4rem 0; text-align:center; }
+    .impact-band h2 { color:var(--sand); margin-bottom:2.5rem; }
+    .impact-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
+    .impact-item strong { display:block; font-family:var(--font-display); font-size:2.4rem; color:var(--clay); line-height:1; margin-bottom:.4rem; }
+    .impact-item span   { font-size:.82rem; color:rgba(242,232,217,.52); }
+
+    @media(max-width:900px){
+      .profile-grid { grid-template-columns:1fr; }
+      .profile-img  { min-height:240px; }
+      .profile-body { padding:1.5rem; }
+      .impact-grid  { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body class="page-enter">
+
+<nav class="nav scrolled" id="nav">
+  <div class="nav__logo">
+    <a href="../index.html">
+      <img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div>
+    </a>
+  </div>
+  <ul class="nav__links">
+    <li><a href="../index.html#nosotros" data-i18n="nav_nosotros">Nosotros</a></li>
+    <li><a href="catalogo.html" data-i18n="nav_catalogo">Catálogo</a></li>
+    <li><a href="#" class="active" data-i18n="nav_artesanos">Artesanos</a></li>
+    <li><a href="../index.html#mercados" data-i18n="nav_mercados">Mercados</a></li>
+    <li><a href="contacto.html" data-i18n="nav_contacto">Contacto</a></li>
+  </ul>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      <button class="lang-btn">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span class="lang-current">🇵🇪 ES</span>
+        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div>
+        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div>
+        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+        <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+      </div>
+    </div>
+    <div class="nav__auth">
+      <a href="login.html" class="login-btn" data-i18n="nav_login">Ingresar</a>
+      <a href="register.html" class="register-btn" data-i18n="nav_register">Registrarse</a>
+    </div>
+  </div>
+  <button class="nav__burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <p class="label label--center" data-i18n="art_label">Comunidad</p>
+  <h1 data-i18n="art_title">Conoce a las <em>bordadoras</em></h1>
+  <p data-i18n="art_desc">Cada bordado lleva el nombre y la historia de quien lo creó. Transparencia total desde el origen hasta tu hogar.</p>
+</div>
+
+<!-- IMPACT -->
+<div class="impact-band">
+  <div class="container">
+    <h2 class="reveal">Impacto <em>real</em> en la comunidad</h2>
+    <div class="impact-grid">
+      <div class="impact-item reveal"><strong>47+</strong><span>artesanas bordadoras registradas</span></div>
+      <div class="impact-item reveal"><strong>8</strong><span>comunidades del Valle del Colca</span></div>
+      <div class="impact-item reveal"><strong>92%</strong><span>del precio va directo a la artesana</span></div>
+      <div class="impact-item reveal"><strong>178</strong><span>países destino de exportación</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="artisans-section">
+  <div class="container">
+
+    <!-- ARTESANA 1 -->
+    <div class="profile-grid reveal">
+      <div class="profile-img">
+        <img data-src="../img/Artesano1.png" alt="María Quispe Ccoa" />
+      </div>
+      <div class="profile-body">
+        <span class="profile-tag">Bordadora destacada · Prendas Tradicionales</span>
+        <h2>María Quispe Ccoa</h2>
+        <span class="profile-village">◎ Chivay, Valle del Colca</span>
+        <p>Bordadora con más de 28 años de experiencia en los bordados Collagua del Valle del Colca, declarados <strong>Patrimonio Cultural de la Nación</strong> por el Ministerio de Cultura del Perú. Sus polleras y mantas son reconocidas en ferias artesanales de Lima, Madrid y Nueva York.</p>
+        <p>Aprendió el oficio de su madre a los 10 años. Cada motivo que borda narra una historia del Valle: el cóndor que vuela sobre el cañón, las flores silvestres de los Andes, los cerros tutelares de Chivay. Trabaja con hilos de seda y lana de alpaca de la región.</p>
+        <div class="profile-skills">
+          <span class="skill-tag">Polleras bordadas</span>
+          <span class="skill-tag">Mantas de alpaca</span>
+          <span class="skill-tag">Chaquetillas</span>
+          <span class="skill-tag">Tintes naturales</span>
+          <span class="skill-tag">Bordado Collagua</span>
+        </div>
+        <div class="profile-metrics">
+          <div class="metric"><strong>47</strong><span>piezas vendidas</span></div>
+          <div class="metric"><strong>12</strong><span>países destino</span></div>
+          <div class="metric"><strong>4.9★</strong><span>valoración</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTESANA 2 -->
+    <div class="profile-grid reveal">
+      <div class="profile-img">
+        <img data-src="../img/Artesano2.png" alt="Elena Condori Huanca" />
+      </div>
+      <div class="profile-body">
+        <span class="profile-tag">Bordadora destacada · Diseños de Bordados</span>
+        <h2>Elena Condori Huanca</h2>
+        <span class="profile-village">◎ Yanque, Valle del Colca</span>
+        <p>Maestra en diseños florales y motivos geométricos del Valle del Colca. Trabaja con hilos de seda teñidos con plantas naturales: cochinilla (rojo carmesí), índigo (azul profundo) y muña andina (verdes y amarillos). Cada color tiene un significado simbólico en la cultura Collagua.</p>
+        <p>Elena heredó los secretos del color de su abuela. Sus diseños combinan la iconografía precolombina Collagua con flores silvestres del cañón. Cada pieza bordada tarda entre 2 y 8 semanas en completarse, según la complejidad del diseño.</p>
+        <div class="profile-skills">
+          <span class="skill-tag">Diseños florales</span>
+          <span class="skill-tag">Bordados geométricos</span>
+          <span class="skill-tag">Tintes naturales</span>
+          <span class="skill-tag">Sombreros bordados</span>
+          <span class="skill-tag">Cintillos y fajas</span>
+        </div>
+        <div class="profile-metrics">
+          <div class="metric"><strong>63</strong><span>piezas vendidas</span></div>
+          <div class="metric"><strong>15</strong><span>países destino</span></div>
+          <div class="metric"><strong>5.0★</strong><span>valoración</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTESANA 3 -->
+    <div class="profile-grid reveal">
+      <div class="profile-img">
+        <img data-src="../img/Artesano3.png" alt="Rosa Mamani Ticona" />
+      </div>
+      <div class="profile-body">
+        <span class="profile-tag">Tejedora · Decoraciones en Telar</span>
+        <h2>Rosa Mamani Ticona</h2>
+        <span class="profile-village">◎ Cabanaconde, Valle del Colca</span>
+        <p>Tejedora en telar de cintura desde los 12 años. Sus tapices y decoraciones capturan los paisajes del Cañón del Colca — el río Colca, las terrazas preincas, el vuelo del cóndor — usando lana de alpaca y ovino hilada a mano con tintes vegetales.</p>
+        <p>Rosa vive en Cabanaconde, puerta de entrada al cañón más profundo del mundo. Su taller es un espacio de encuentro donde enseña la técnica ancestral del telar de cintura a jóvenes de la comunidad, asegurando que el conocimiento no se pierda.</p>
+        <div class="profile-skills">
+          <span class="skill-tag">Telar de cintura</span>
+          <span class="skill-tag">Tapices decorativos</span>
+          <span class="skill-tag">Mantas de alpaca</span>
+          <span class="skill-tag">Bolsos tejidos</span>
+          <span class="skill-tag">Cinturones</span>
+        </div>
+        <div class="profile-metrics">
+          <div class="metric"><strong>39</strong><span>piezas vendidas</span></div>
+          <div class="metric"><strong>9</strong><span>países destino</span></div>
+          <div class="metric"><strong>4.8★</strong><span>valoración</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA para artesanas -->
+    <div class="reveal" style="background:var(--bark);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;margin-top:1rem;border:1px solid rgba(196,118,74,.2)">
+      <p style="font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:.75rem">¿Eres artesana del Colca?</p>
+      <h3 style="color:var(--sand);font-size:1.6rem;margin-bottom:.75rem">Únete a <em>Maki Colca Global</em></h3>
+      <p style="color:rgba(242,232,217,.6);font-size:.92rem;max-width:500px;margin:0 auto 1.5rem;line-height:1.7">Registra tu perfil, comparte tu historia y lleva tus bordados a compradores internacionales sin intermediarios.</p>
+      <a href="register.html" class="btn btn--primary" data-i18n="nav_register">Registrarse como artesana</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:none;padding-top:0">
+      <p data-i18n="footer_copy">© 2025 Maki Colca Global · Valle del Colca, Arequipa, Perú</p>
+      <p><a href="../index.html" style="color:rgba(242,232,217,.45)">← Volver al inicio</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/translations.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

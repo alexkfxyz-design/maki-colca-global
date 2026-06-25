@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingresar — Maki Colca Global</title>
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="page-enter">
+
+<nav class="nav scrolled" id="nav">
+  <div class="nav__logo">
+    <a href="../index.html">
+      <img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div>
+    </a>
+  </div>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      <button class="lang-btn">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span class="lang-current">🇵🇪 ES</span>
+        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div>
+        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div>
+        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+        <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-layout">
+
+  <!-- LEFT -->
+  <div class="auth-panel auth-panel--dark">
+    <div class="auth-brand">
+      <img src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="auth-brand-text">
+        <strong>Maki Colca Global</strong>
+        <span>Bordados del Colca al Mundo</span>
+      </div>
+    </div>
+    <h1>Bienvenida <em>de vuelta</em></h1>
+    <p>Accede a tu cuenta para hacer pedidos, ver el estado de tus envíos o gestionar tus productos artesanales.</p>
+    <div class="auth-benefits" style="margin-top:2rem">
+      <div class="auth-benefit">
+        <span class="auth-benefit__icon">◉</span>
+        <div>
+          <strong>El catálogo es público</strong>
+          <p>No necesitas cuenta para explorar o ver perfiles de artesanas.</p>
+        </div>
+      </div>
+      <div class="auth-benefit">
+        <span class="auth-benefit__icon">◉</span>
+        <div>
+          <strong>Cuenta necesaria para comprar</strong>
+          <p>Solo necesitas cuenta para hacer pedidos o vender tus piezas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="auth-panel auth-panel--light">
+
+    <h2 style="margin-bottom:.5rem" data-i18n="login_title">Bienvenida de vuelta</h2>
+    <p style="font-size:.9rem;color:#7a5c42;margin-bottom:2rem">Accede a tu cuenta de Maki Colca Global</p>
+
+    <form id="loginForm" novalidate>
+      <div class="form-group">
+        <label data-i18n="login_email">Correo electrónico</label>
+        <input type="email" placeholder="tu@email.com" required />
+      </div>
+      <div class="form-group">
+        <label data-i18n="login_pass">Contraseña</label>
+        <input type="password" placeholder="Tu contraseña" required />
+      </div>
+      <p style="font-size:.8rem;text-align:right;margin-top:-.75rem;margin-bottom:1.25rem">
+        <a href="#" style="color:var(--clay)">¿Olvidaste tu contraseña?</a>
+      </p>
+      <button type="submit" class="btn btn--primary form-submit" data-i18n="login_submit">Ingresar</button>
+      <div class="form-divider"><span data-i18n="reg_or">o</span></div>
+      <a href="../index.html" class="btn btn--outline form-submit" style="margin-top:0">Explorar sin cuenta</a>
+      <p class="form-link" style="margin-top:1.25rem">
+        <a href="register.html" data-i18n="login_reg_link">¿No tienes cuenta? Registrarse</a>
+      </p>
+    </form>
+
+    <div id="loginSuccess" style="display:none;text-align:center;padding:2rem 0">
+      <div style="font-size:3rem;margin-bottom:1rem">◈</div>
+      <h2 style="margin-bottom:.75rem;color:var(--clay)">¡Bienvenida!</h2>
+      <p style="color:#5a3d28;font-size:.95rem;line-height:1.7;margin-bottom:1.75rem">Has ingresado correctamente a tu cuenta de Maki Colca Global.</p>
+      <a href="../index.html" class="btn btn--primary">Ir al inicio</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="../js/translations.js"></script>
+<script src="../js/main.js"></script>
+<script>
+document.getElementById('loginForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('loginForm').style.display = 'none';
+  document.getElementById('loginSuccess').style.display = 'block';
+});
+</script>
+</body>
+</html>

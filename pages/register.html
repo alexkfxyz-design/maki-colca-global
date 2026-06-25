@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrarse — Maki Colca Global</title>
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="page-enter">
+
+<nav class="nav scrolled" id="nav">
+  <div class="nav__logo">
+    <a href="../index.html">
+      <img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div>
+    </a>
+  </div>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      <button class="lang-btn">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span class="lang-current">🇵🇪 ES</span>
+        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div>
+        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div>
+        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+        <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-layout">
+
+  <!-- LEFT: Benefits panel -->
+  <div class="auth-panel auth-panel--dark">
+    <div class="auth-brand">
+      <img src="../assets/logo.png" alt="Maki Colca Global" />
+      <div class="auth-brand-text">
+        <strong>Maki Colca Global</strong>
+        <span>Bordados del Colca al Mundo</span>
+      </div>
+    </div>
+    <h1>Únete a la <em>comunidad</em></h1>
+    <p>Ya seas comprador internacional o artesana del Valle del Colca, aquí encuentras tu lugar.</p>
+    <div class="auth-benefits">
+      <div class="auth-benefit">
+        <span class="auth-benefit__icon">◉</span>
+        <div>
+          <strong>Acceso libre al catálogo</strong>
+          <p>Cualquier visitante puede explorar el catálogo sin registrarse.</p>
+        </div>
+      </div>
+      <div class="auth-benefit">
+        <span class="auth-benefit__icon">◉</span>
+        <div>
+          <strong>Clientes: compra directa</strong>
+          <p>Haz pedidos, personaliza piezas y haz seguimiento de tus envíos.</p>
+        </div>
+      </div>
+      <div class="auth-benefit">
+        <span class="auth-benefit__icon">◉</span>
+        <div>
+          <strong>Artesanas: tu vitrina global</strong>
+          <p>Sube tus productos y llega a compradores en 178 países sin intermediarios.</p>
+        </div>
+      </div>
+      <div class="auth-benefit">
+        <span class="auth-benefit__icon">◉</span>
+        <div>
+          <strong>Precio justo siempre</strong>
+          <p>92% del precio de venta llega íntegro a la artesana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="auth-panel auth-panel--light">
+
+    <!-- Role selector -->
+    <p class="label" style="margin-bottom:1.25rem">Tipo de cuenta</p>
+    <div class="role-cards" id="roleCards">
+      <div class="role-card active" data-role="client" onclick="selectRole('client')">
+        <div class="role-card__icon">🛍️</div>
+        <div class="role-card__name" data-i18n="reg_tab_client">Soy Cliente</div>
+        <div class="role-card__desc">Quiero comprar artesanías del Colca</div>
+      </div>
+      <div class="role-card" data-role="artisan" onclick="selectRole('artisan')">
+        <div class="role-card__icon">🧵</div>
+        <div class="role-card__name" data-i18n="reg_tab_artisan">Soy Artesana</div>
+        <div class="role-card__desc">Quiero vender mis bordados</div>
+      </div>
+    </div>
+
+    <!-- Client form -->
+    <form id="formClient" novalidate>
+      <h2 style="margin-bottom:1.5rem" data-i18n="reg_title_client">Regístrate como Cliente</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="reg_name">Nombre completo</label>
+          <input type="text" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label data-i18n="reg_country">País</label>
+          <select>
+            <option value="">Selecciona...</option>
+            <option>Estados Unidos</option><option>Francia</option><option>Alemania</option>
+            <option>Reino Unido</option><option>Japón</option><option>Canadá</option>
+            <option>Italia</option><option>España</option><option>Perú</option><option>Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="reg_email">Correo electrónico</label>
+        <input type="email" placeholder="tu@email.com" required />
+      </div>
+      <div class="form-group">
+        <label data-i18n="reg_password">Contraseña</label>
+        <input type="password" placeholder="Mínimo 8 caracteres" required />
+      </div>
+      <button type="submit" class="btn btn--primary form-submit" data-i18n="reg_submit">Crear cuenta</button>
+      <p class="form-link"><a href="login.html" data-i18n="reg_login_link">¿Ya tienes cuenta? Ingresar</a></p>
+    </form>
+
+    <!-- Artisan form (hidden by default) -->
+    <form id="formArtisan" style="display:none" novalidate>
+      <h2 style="margin-bottom:1.5rem" data-i18n="reg_title_artisan">Regístrate como Artesana</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="reg_name">Nombre completo</label>
+          <input type="text" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label data-i18n="reg_village">Comunidad / Pueblo</label>
+          <select>
+            <option value="">Selecciona...</option>
+            <option>Chivay</option><option>Yanque</option><option>Cabanaconde</option>
+            <option>Achoma</option><option>Maca</option><option>Coporaque</option>
+            <option>Ichupampa</option><option>Sibayo</option><option>Otra</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="reg_email">Correo electrónico</label>
+        <input type="email" placeholder="tu@email.com" required />
+      </div>
+      <div class="form-group">
+        <label data-i18n="reg_specialty">Especialidad artesanal</label>
+        <select required>
+          <option value="">Selecciona...</option>
+          <option>Prendas Tradicionales</option>
+          <option>Diseños de Bordados</option>
+          <option>Decoraciones en Telar</option>
+          <option>Bordado Tradicional</option>
+          <option>Varias especialidades</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-i18n="reg_bio">Cuéntanos tu historia</label>
+        <textarea data-i18n-placeholder="reg_bio_ph" placeholder="Describe tu trabajo, técnicas y años de experiencia..."></textarea>
+      </div>
+      <div class="form-group">
+        <label data-i18n="reg_password">Contraseña</label>
+        <input type="password" placeholder="Mínimo 8 caracteres" required />
+      </div>
+      <button type="submit" class="btn btn--primary form-submit" data-i18n="reg_submit">Crear cuenta</button>
+      <p class="form-link"><a href="login.html" data-i18n="reg_login_link">¿Ya tienes cuenta? Ingresar</a></p>
+    </form>
+
+    <!-- Success state -->
+    <div id="successBox" style="display:none;text-align:center;padding:2rem 0">
+      <div style="font-size:3rem;margin-bottom:1rem">◈</div>
+      <h2 style="margin-bottom:.75rem;color:var(--clay)">¡Cuenta creada!</h2>
+      <p style="color:#5a3d28;font-size:.95rem;line-height:1.7;margin-bottom:1.75rem">Tu cuenta ha sido creada con éxito. Ya puedes explorar el catálogo y conectar con las bordadoras del Valle del Colca.</p>
+      <a href="../index.html" class="btn btn--primary">Ir al inicio</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="../js/translations.js"></script>
+<script src="../js/main.js"></script>
+<script>
+function selectRole(role) {
+  document.querySelectorAll('.role-card').forEach(c => c.classList.remove('active'));
+  document.querySelector(`[data-role="${role}"]`).classList.add('active');
+  document.getElementById('formClient').style.display  = role === 'client'  ? '' : 'none';
+  document.getElementById('formArtisan').style.display = role === 'artisan' ? '' : 'none';
+}
+
+// Check URL param
+const urlRole = new URLSearchParams(location.search).get('role');
+if (urlRole === 'artisan') selectRole('artisan');
+
+// Form submit simulation
+['formClient','formArtisan'].forEach(id => {
+  document.getElementById(id)?.addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById(id).style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+    document.querySelector('.role-cards').style.display = 'none';
+    document.querySelector('.label').style.display = 'none';
+  });
+});
+</script>
+</body>
+</html>
