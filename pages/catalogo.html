@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo — Maki Colca Global</title>
+  <meta name="description" content="Bordados artesanales del Valle del Colca: Prendas tradicionales, diseños Collagua, tapices y más. Envío internacional." />
   <link rel="stylesheet" href="../css/main.css" />
   <style>
-    .page-header { background: linear-gradient(160deg,#1A100A,#2C1A0E); padding: 8rem 2.5rem 4rem; text-align: center; border-bottom: 1px solid rgba(196,118,74,.2); }
-    .page-header h1 { color: var(--sand); margin-bottom: 1rem; }
-    .page-header p  { color: rgba(242,232,217,.6); font-size: 1rem; max-width: 500px; margin: 0 auto; }
-    .catalog-section { padding: 5rem 0; background: var(--sand-light); min-height: 60vh; }
-    .empty-state { text-align:center; padding:4rem 2rem; color:#7a5c42; }
-    .empty-state h3 { margin-bottom:.5rem; }
+    .page-header{background:linear-gradient(160deg,#1A100A,#2C1A0E);padding:8rem 2.5rem 4rem;text-align:center;border-bottom:1px solid rgba(196,118,74,.2)}
+    .page-header h1{color:var(--sand);margin-bottom:1rem}
+    .page-header p{color:rgba(242,232,217,.6);font-size:1rem;max-width:500px;margin:0 auto}
+    .catalog-section{padding:5rem 0;background:var(--sand-light);min-height:60vh}
+    .empty-state{text-align:center;padding:4rem 2rem;color:#7a5c42}
   </style>
 </head>
 <body class="page-enter">
 
-<!-- NAV -->
+<div class="trust-bar"><div class="trust-bar__inner"><div class="trust-item"><span>🚚</span><span>Envío certificado</span></div><div class="trust-item"><span>🔒</span><span>Pago seguro</span></div><div class="trust-item"><span>🏛️</span><span>Patrimonio Cultural</span></div><div class="trust-item"><span>♻️</span><span>Comercio Justo</span></div></div></div>
+
 <nav class="nav scrolled" id="nav">
-  <div class="nav__logo">
-    <a href="../index.html">
-      <img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" />
-      <div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div>
-    </a>
-  </div>
+  <div class="nav__logo"><a href="../index.html"><img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" /><div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div></a></div>
   <ul class="nav__links">
     <li><a href="../index.html#nosotros" data-i18n="nav_nosotros">Nosotros</a></li>
     <li><a href="#" class="active" data-i18n="nav_catalogo">Catálogo</a></li>
     <li><a href="artesanos.html" data-i18n="nav_artesanos">Artesanos</a></li>
-    <li><a href="../index.html#mercados" data-i18n="nav_mercados">Mercados</a></li>
+    <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
     <li><a href="contacto.html" data-i18n="nav_contacto">Contacto</a></li>
   </ul>
   <div class="nav__right">
-    <div class="lang-switcher">
-      <button class="lang-btn">
-        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        <span class="lang-current">🇵🇪 ES</span>
-        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-      </button>
-      <div class="lang-dropdown">
-        <div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div>
-        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div>
-        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
-        <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
-      </div>
-    </div>
-    <div class="nav__auth">
-      <a href="login.html" class="login-btn" data-i18n="nav_login">Ingresar</a>
-      <a href="register.html" class="register-btn" data-i18n="nav_register">Registrarse</a>
-    </div>
+    <select class="currency-select" id="currencySelect"><option value="USD">$ USD</option><option value="EUR">€ EUR</option><option value="GBP">£ GBP</option></select>
+    <div class="lang-switcher"><button class="lang-btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg><span class="lang-current">🇵🇪 ES</span><svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg></button><div class="lang-dropdown"><div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div><div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div><div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div><div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div></div></div>
+    <div class="nav__auth"><a href="login.html" class="login-btn" data-i18n="nav_login">Ingresar</a><a href="register.html" class="register-btn" data-i18n="nav_register">Registrarse</a></div>
+    <button class="cart-btn" onclick="openCart()" aria-label="Carrito">🛒 <span class="cart-count" style="display:none">0</span></button>
   </div>
-  <button class="nav__burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+  <button class="nav__burger" id="navBurger"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="page-header">
   <p class="label label--center">Maki Colca Global</p>
   <h1 data-i18n="cat_title">Colección <em>Textil del Colca</em></h1>
-  <p>Prendas y bordados únicos del Valle del Colca. Cada pieza tiene historia, origen verificado y envío internacional.</p>
+  <p>16 piezas únicas. Origen verificado. Envío a 178 países.</p>
 </div>
 
 <section class="catalog-section">
@@ -72,68 +54,86 @@
   </div>
 </section>
 
+<!-- Cart sidebar & overlay (same as index) -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-sidebar__head"><h3>🛒 Tu carrito</h3><button class="cart-close" id="cartClose">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-sidebar__foot">
+    <div class="cart-shipping"><label>País de envío</label><select id="shippingCountry"><option value="">Selecciona tu país...</option><option value="PE">🇵🇪 Perú — $8 USD</option><option value="US">🇺🇸 Estados Unidos — $22</option><option value="FR">🇫🇷 Francia — $22</option><option value="DE">🇩🇪 Alemania — $22</option><option value="GB">🇬🇧 Reino Unido — $22</option><option value="JP">🇯🇵 Japón — $22</option></select></div>
+    <div class="cart-totals"><div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">—</span></div><div class="cart-row"><span>Envío</span><span id="cartShipping">—</span></div><div class="cart-row cart-row--total"><span>Total</span><span id="cartTotal"><span class="price">—</span></span></div></div>
+    <button class="btn btn--primary btn--full" onclick="showToast('🎉 ¡Pedido iniciado!','Redirigiendo a pago seguro...')">Proceder al pago</button>
+    <p style="font-size:.72rem;color:#9a7a5a;text-align:center;margin-top:.75rem">🔒 Pago seguro · SSL encriptado</p>
+  </div>
+</div>
+
+<a href="https://wa.me/51954000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-float__tooltip">¿Tienes dudas?</span></a>
+<div class="toast" id="toast"><div class="toast__title"></div><div class="toast__msg"></div></div>
+
 <footer class="footer">
   <div class="container">
-    <div class="footer__bottom" style="border-top:none;padding-top:0">
-      <p data-i18n="footer_copy">© 2025 Maki Colca Global · Valle del Colca, Arequipa, Perú</p>
-      <p><a href="../index.html" style="color:rgba(242,232,217,.45)">← Volver al inicio</a></p>
+    <div class="footer__bottom" style="border-top:none;padding-top:1.5rem">
+      <p data-i18n="footer_copy">© 2025 Maki Colca Global</p>
+      <div class="footer__legal-links"><a href="terminos.html">Términos</a><a href="privacidad.html">Privacidad</a><a href="devoluciones.html">Devoluciones</a></div>
+      <p><a href="../index.html" style="color:rgba(242,232,217,.4)">← Volver al inicio</a></p>
     </div>
   </div>
 </footer>
 
 <script src="../js/translations.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/app.js"></script>
 <script>
+// Product data with stock and ratings
 const products = [
-  // PRENDAS TRADICIONALES
-  { id:1,  cat:'prendas',  badge:'Más vendido',      name:'Pollera Bordada Collagua',        artisan:'María Quispe · Chivay',          price:'USD 185', photo:'../img/ROPA1.png' },
-  { id:2,  cat:'prendas',  badge:null,               name:'Chaquetilla Tradicional',         artisan:'Elena Condori · Yanque',         price:'USD 220', photo:'../img/ROPA2.png' },
-  { id:3,  cat:'prendas',  badge:'Edición especial', name:'Prenda de Dama Ceremonial',       artisan:'Rosa Mamani · Cabanaconde',      price:'USD 310', photo:'../img/prenda_dama.png' },
-  { id:4,  cat:'prendas',  badge:null,               name:'Conjunto Festivo del Colca',      artisan:'María Quispe · Chivay',          price:'USD 260', photo:'../img/ROPA3.png' },
-  { id:5,  cat:'prendas',  badge:null,               name:'Prendas Tradicionales Collagua',  artisan:'Elena Condori · Yanque',         price:'USD 195', photo:'../img/Prendas_Tradicionales.png' },
-
-  // DISEÑOS DE BORDADOS
-  { id:6,  cat:'disenios', badge:'Artesanal',        name:'Diseño Floral Andino',            artisan:'Elena Condori · Yanque',         price:'USD 65',  photo:'../img/Disenios_bordados.png' },
-  { id:7,  cat:'disenios', badge:null,               name:'Motivo Geométrico Collagua',      artisan:'María Quispe · Chivay',          price:'USD 78',  photo:'../img/Disenios_bordados1.png' },
-  { id:8,  cat:'disenios', badge:'Premium',          name:'Diseño Cóndor y Flora',           artisan:'Rosa Mamani · Cabanaconde',      price:'USD 95',  photo:'../img/Disenios_bordados2.png' },
-  { id:9,  cat:'disenios', badge:null,               name:'Panel Decorativo Bordado',        artisan:'Elena Condori · Yanque',         price:'USD 55',  photo:'../img/Disenio1.png' },
-  { id:10, cat:'disenios', badge:null,               name:'Diseño Ceremonial Andino',        artisan:'María Quispe · Chivay',          price:'USD 88',  photo:'../img/Disenio3.png' },
-
-  // DECORACIONES EN TELAR
-  { id:11, cat:'telar',    badge:'Más vendido',      name:'Tapiz del Cañón del Colca',       artisan:'Rosa Mamani · Cabanaconde',      price:'USD 120', photo:'../img/Decoraciones_en_Telar.jpg' },
-  { id:12, cat:'telar',    badge:null,               name:'Manta de Alpaca Collagua',        artisan:'Rosa Mamani · Cabanaconde',      price:'USD 85',  photo:'../img/MantadeAlpacaCollagua.png' },
-
-  // BORDADO TRADICIONAL
-  { id:13, cat:'bordado',  badge:'Patrimonio',       name:'Bordado Collagua Tradicional',    artisan:'María Quispe · Chivay',          price:'USD 145', photo:'../img/Bordado_Tradicional.jpg' },
-  { id:14, cat:'bordado',  badge:null,               name:'Bordado Floral Ceremonial',       artisan:'Elena Condori · Yanque',         price:'USD 110', photo:'../img/bordado1.png' },
-  { id:15, cat:'bordado',  badge:'Artesanal',        name:'Cenefa Bordada del Colca',        artisan:'Rosa Mamani · Cabanaconde',      price:'USD 75',  photo:'../img/Bordado2.png' },
-  { id:16, cat:'bordado',  badge:null,               name:'Bordado Geométrico Andino',       artisan:'María Quispe · Chivay',          price:'USD 90',  photo:'../img/bordado3.png' },
+  {id:'p1',cat:'prendas',badge:'Más vendido',name:'Pollera Bordada Collagua',artisan:'María Quispe · Chivay',price:185,stock:'ok',stockLabel:'En stock',rating:4.9,reviews:23,photo:'../img/ROPA1.png'},
+  {id:'p2',cat:'prendas',badge:null,name:'Chaquetilla Tradicional',artisan:'Elena Condori · Yanque',price:220,stock:'ok',stockLabel:'En stock',rating:5.0,reviews:11,photo:'../img/ROPA2.png'},
+  {id:'p3',cat:'prendas',badge:'Edición especial',name:'Prenda de Dama Ceremonial',artisan:'Rosa Mamani · Cabanaconde',price:310,stock:'low',stockLabel:'¡Últimas 2!',rating:4.8,reviews:8,photo:'../img/prenda_dama.png'},
+  {id:'p4',cat:'prendas',badge:null,name:'Conjunto Festivo del Colca',artisan:'María Quispe · Chivay',price:260,stock:'ok',stockLabel:'En stock',rating:4.9,reviews:14,photo:'../img/ROPA3.png'},
+  {id:'p5',cat:'prendas',badge:null,name:'Prendas Collagua Tradicional',artisan:'Elena Condori · Yanque',price:195,stock:'ok',stockLabel:'En stock',rating:4.7,reviews:19,photo:'../img/Prendas_Tradicionales.png'},
+  {id:'d1',cat:'disenios',badge:'Artesanal',name:'Diseño Floral Andino',artisan:'Elena Condori · Yanque',price:65,stock:'ok',stockLabel:'En stock',rating:5.0,reviews:31,photo:'../img/Disenios_bordados.png'},
+  {id:'d2',cat:'disenios',badge:null,name:'Motivo Geométrico Collagua',artisan:'María Quispe · Chivay',price:78,stock:'ok',stockLabel:'En stock',rating:4.8,reviews:17,photo:'../img/Disenios_bordados1.png'},
+  {id:'d3',cat:'disenios',badge:'Premium',name:'Diseño Cóndor y Flora',artisan:'Rosa Mamani · Cabanaconde',price:95,stock:'low',stockLabel:'¡Últimas 3!',rating:5.0,reviews:22,photo:'../img/Disenios_bordados2.png'},
+  {id:'d4',cat:'disenios',badge:null,name:'Panel Decorativo Bordado',artisan:'Elena Condori · Yanque',price:55,stock:'ok',stockLabel:'En stock',rating:4.6,reviews:9,photo:'../img/Disenio1.png'},
+  {id:'d5',cat:'disenios',badge:null,name:'Diseño Ceremonial Andino',artisan:'María Quispe · Chivay',price:88,stock:'ok',stockLabel:'En stock',rating:4.9,reviews:13,photo:'../img/Disenio3.png'},
+  {id:'t1',cat:'telar',badge:'Más vendido',name:'Tapiz del Cañón del Colca',artisan:'Rosa Mamani · Cabanaconde',price:120,stock:'ok',stockLabel:'En stock',rating:5.0,reviews:28,photo:'../img/Decoraciones_en_Telar.jpg'},
+  {id:'t2',cat:'telar',badge:null,name:'Manta de Alpaca Collagua',artisan:'Rosa Mamani · Cabanaconde',price:85,stock:'ok',stockLabel:'En stock',rating:4.9,reviews:36,photo:'../img/MantadeAlpacaCollagua.png'},
+  {id:'b1',cat:'bordado',badge:'Patrimonio',name:'Bordado Collagua Tradicional',artisan:'María Quispe · Chivay',price:145,stock:'ok',stockLabel:'En stock',rating:5.0,reviews:41,photo:'../img/Bordado_Tradicional.jpg'},
+  {id:'b2',cat:'bordado',badge:null,name:'Bordado Floral Ceremonial',artisan:'Elena Condori · Yanque',price:110,stock:'ok',stockLabel:'En stock',rating:4.8,reviews:18,photo:'../img/bordado1.png'},
+  {id:'b3',cat:'bordado',badge:'Artesanal',name:'Cenefa Bordada del Colca',artisan:'Rosa Mamani · Cabanaconde',price:75,stock:'low',stockLabel:'¡Últimas 2!',rating:4.9,reviews:24,photo:'../img/Bordado2.png'},
+  {id:'b4',cat:'bordado',badge:null,name:'Bordado Geométrico Andino',artisan:'María Quispe · Chivay',price:90,stock:'ok',stockLabel:'En stock',rating:4.7,reviews:12,photo:'../img/bordado3.png'},
 ];
+
+const stars = r => '★'.repeat(Math.round(r)) + '☆'.repeat(5-Math.round(r));
 
 function renderProducts(filter) {
   const grid = document.getElementById('productsGrid');
   const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
-  if (!list.length) {
-    grid.innerHTML = '<div class="empty-state"><h3>Sin resultados</h3><p>No hay productos en esta categoría.</p></div>';
-    return;
-  }
-  grid.innerHTML = list.map((p, i) => `
-    <div class="product-card" style="animation:fadeUp .55s ease ${i * 0.06}s both">
+  if (!list.length) { grid.innerHTML = '<div class="empty-state"><h3>Sin resultados</h3></div>'; return; }
+
+  grid.innerHTML = list.map((p,i) => `
+    <div class="product-card" style="animation:fadeUp .55s ease ${i*.06}s both">
       <div class="product-card__img">
         ${p.badge ? `<span class="product-card__badge">${p.badge}</span>` : ''}
+        <span class="product-card__stock stock--${p.stock}">${p.stockLabel}</span>
         <img data-src="${p.photo}" alt="${p.name}" />
       </div>
       <div class="product-card__body">
         <div class="product-card__cat">${p.cat}</div>
         <h3>${p.name}</h3>
         <p class="product-card__artisan">◎ ${p.artisan}</p>
+        <div class="product-card__stars">
+          <span class="stars">${stars(p.rating)}</span>
+          <span class="stars-count">${p.rating} (${p.reviews})</span>
+        </div>
         <div class="product-card__footer">
-          <span class="product-card__price">${p.price}</span>
-          <button class="product-card__btn" data-i18n="btn_detail">Ver detalle</button>
+          <div class="product-card__prices">
+            <span class="product-card__price" data-usd="${p.price}">${fmtPrice(p.price)}</span>
+            <span class="product-card__price-eur" data-usd-secondary="${p.price}">≈ €${(p.price*0.92).toFixed(2)}</span>
+          </div>
+          <button class="product-card__btn" onclick="addToCart({id:'${p.id}',name:'${p.name}',artisan:'${p.artisan}',price:${p.price},img:'${p.photo}',qty:1})" data-i18n="btn_detail">+ Carrito</button>
         </div>
       </div>
-    </div>
-  `).join('');
+    </div>`).join('');
   lazyLoadImages(grid);
   if (window.applyTranslations) applyTranslations();
 }
@@ -147,12 +147,8 @@ document.getElementById('filterBar').addEventListener('click', e => {
 });
 
 renderProducts('all');
-
 const urlCat = new URLSearchParams(location.search).get('cat');
-if (urlCat) {
-  const btn = document.querySelector(`[data-filter="${urlCat}"]`);
-  if (btn) btn.click();
-}
+if (urlCat) { const btn = document.querySelector(`[data-filter="${urlCat}"]`); if (btn) btn.click(); }
 </script>
 </body>
 </html>

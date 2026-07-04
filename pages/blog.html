@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Maki Colca Global</title>
+  <meta name="description" content="Historia, cultura andina y sostenibilidad. Descubre el mundo del bordado Collagua del Valle del Colca, Perú." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .page-header{background:linear-gradient(160deg,#1A100A,#2C1A0E);padding:8rem 2.5rem 4rem;text-align:center;border-bottom:1px solid rgba(196,118,74,.2)}
+    .page-header h1{color:var(--sand);margin-bottom:1rem}
+    .page-header p{color:rgba(242,232,217,.6);font-size:1rem;max-width:500px;margin:0 auto}
+    .blog-section{padding:5rem 0;background:var(--sand-light)}
+    .blog-featured{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem;margin-bottom:3rem}
+    .blog-featured-card{border-radius:var(--radius-lg);overflow:hidden;background:var(--white);border:1px solid rgba(196,118,74,.1);transition:all .3s var(--ease)}
+    .blog-featured-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+    .blog-featured-card__img{height:320px;background:#2C1A0E;overflow:hidden;position:relative}
+    .blog-featured-card__img img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+    .blog-featured-card__img img.loaded{opacity:1}
+    .blog-featured-card__body{padding:1.75rem}
+    .blog-featured-card__body .blog-card__cat{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--clay);color:var(--white);padding:.25rem .6rem;border-radius:20px;margin-bottom:.75rem}
+    .blog-featured-card__body h2{font-size:1.6rem;margin-bottom:.75rem;line-height:1.3}
+    .blog-featured-card__body p{font-size:.92rem;color:#5a3d28;line-height:1.7;margin-bottom:1.25rem}
+    .blog-side{display:flex;flex-direction:column;gap:1.25rem}
+    .blog-side-card{display:flex;gap:1rem;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(196,118,74,.1);padding:1rem;transition:all .3s var(--ease)}
+    .blog-side-card:hover{transform:translateX(3px);box-shadow:var(--shadow-sm)}
+    .blog-side-card__img{width:80px;height:80px;border-radius:var(--radius);background:#2C1A0E;overflow:hidden;flex-shrink:0}
+    .blog-side-card__img img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+    .blog-side-card__img img.loaded{opacity:1}
+    .blog-side-card__body h3{font-size:.92rem;margin-bottom:.3rem;line-height:1.3}
+    .blog-side-card__body p{font-size:.78rem;color:#7a5c42}
+    @media(max-width:768px){.blog-featured{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="page-enter">
+
+<div class="trust-bar"><div class="trust-bar__inner"><div class="trust-item"><span>🏛️</span><span>Patrimonio Cultural del Perú</span></div><div class="trust-item"><span>🌿</span><span>Moda sostenible andina</span></div></div></div>
+
+<nav class="nav scrolled" id="nav">
+  <div class="nav__logo"><a href="../index.html"><img class="nav__logo-img" src="../assets/logo.png" alt="Maki Colca Global" /><div class="nav__logo-text"><strong>Maki Colca</strong><span>Global</span></div></a></div>
+  <ul class="nav__links">
+    <li><a href="../index.html#nosotros" data-i18n="nav_nosotros">Nosotros</a></li>
+    <li><a href="catalogo.html" data-i18n="nav_catalogo">Catálogo</a></li>
+    <li><a href="artesanos.html" data-i18n="nav_artesanos">Artesanos</a></li>
+    <li><a href="#" class="active" data-i18n="nav_blog">Blog</a></li>
+    <li><a href="contacto.html" data-i18n="nav_contacto">Contacto</a></li>
+  </ul>
+  <div class="nav__right">
+    <div class="lang-switcher"><button class="lang-btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg><span class="lang-current">🇵🇪 ES</span><svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:currentColor"><path d="M7 10l5 5 5-5z"/></svg></button><div class="lang-dropdown"><div class="lang-option selected" data-lang="es"><span class="flag">🇵🇪</span> Español</div><div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</div><div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div><div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div></div></div>
+    <div class="nav__auth"><a href="login.html" class="login-btn" data-i18n="nav_login">Ingresar</a><a href="register.html" class="register-btn" data-i18n="nav_register">Registrarse</a></div>
+  </div>
+  <button class="nav__burger" id="navBurger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <p class="label label--center">Blog</p>
+  <h1>Historia y <em>cultura andina</em></h1>
+  <p>Descubre el mundo del bordado Collagua, las técnicas ancestrales y el impacto del comercio justo en el Valle del Colca.</p>
+</div>
+
+<section class="blog-section">
+  <div class="container">
+
+    <!-- Featured -->
+    <div class="blog-featured reveal">
+      <a href="#" class="blog-featured-card">
+        <div class="blog-featured-card__img"><img data-src="../img/Bordado_Tradicional.jpg" alt="Bordado Collagua" /></div>
+        <div class="blog-featured-card__body">
+          <span class="blog-card__cat">Cultura · Junio 2025</span>
+          <h2>El bordado Collagua: Patrimonio vivo de los Andes</h2>
+          <p>Cómo los bordados del Valle del Colca cuentan 500 años de historia andina en cada puntada. El Ministerio de Cultura declaró esta técnica Patrimonio Cultural Inmaterial de la Nación en 2022.</p>
+          <p>Cada diseño geométrico que aparece en una pollera Collagua tiene un significado específico: los rombos representan la dualidad andina, las flores a la Pachamama, y el cóndor al mensajero entre el mundo humano y el divino.</p>
+          <a href="#" class="btn btn--outline btn--sm">Leer artículo completo →</a>
+        </div>
+      </a>
+      <div class="blog-side">
+        <a href="#" class="blog-side-card">
+          <div class="blog-side-card__img"><img data-src="../img/Artesano2.png" alt="Tintes naturales" /></div>
+          <div class="blog-side-card__body">
+            <span style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)">Artesanas · Mayo 2025</span>
+            <h3>Tintes naturales: los colores secretos del Colca</h3>
+            <p style="font-size:.76rem;color:#7a5c42">Cochinilla, índigo y muña andina: los pigmentos que hacen únicos los bordados.</p>
+          </div>
+        </a>
+        <a href="#" class="blog-side-card">
+          <div class="blog-side-card__img"><img data-src="../img/Decoraciones_en_Telar.jpg" alt="Telar" /></div>
+          <div class="blog-side-card__body">
+            <span style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)">Sostenibilidad · Abril 2025</span>
+            <h3>Moda sostenible: el mundo mira hacia los Andes</h3>
+            <p style="font-size:.76rem;color:#7a5c42">El mercado europeo de moda ética crece 25% anual. Los bordados del Colca lideran.</p>
+          </div>
+        </a>
+        <a href="#" class="blog-side-card">
+          <div class="blog-side-card__img"><img data-src="../img/Artesano1.png" alt="Artesana" /></div>
+          <div class="blog-side-card__body">
+            <span style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)">Comunidad · Marzo 2025</span>
+            <h3>Comercio justo: cómo cada compra cambia una vida</h3>
+            <p style="font-size:.76rem;color:#7a5c42">El modelo sin intermediarios permite que el 92% del precio llegue al artesano.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- More posts -->
+    <p class="label reveal" style="margin-top:3rem">Más artículos</p>
+    <div class="blog-grid reveal">
+      <a href="#" class="blog-card">
+        <div class="blog-card__img"><img data-src="../img/ROPA1.png" alt="Pollera" /><span class="blog-card__cat">Guía de compra</span></div>
+        <div class="blog-card__body"><div class="blog-card__date">Febrero 2025</div><h3>Cómo elegir una pollera Collagua auténtica</h3><p>Guía práctica para identificar bordados artesanales genuinos y diferenciarlos de imitaciones industriales.</p><span class="blog-card__link">Leer más →</span></div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card__img"><img data-src="../img/bordado1.png" alt="Bordado" /><span class="blog-card__cat">Historia</span></div>
+        <div class="blog-card__body"><div class="blog-card__date">Enero 2025</div><h3>Los símbolos del bordado andino y su significado</h3><p>Cóndores, flores y geometría: un diccionario visual de los iconos del Valle del Colca.</p><span class="blog-card__link">Leer más →</span></div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card__img"><img data-src="../img/Artesano3.png" alt="Tejedora" /><span class="blog-card__cat">Viaje</span></div>
+        <div class="blog-card__body"><div class="blog-card__date">Diciembre 2024</div><h3>Guía para visitar el Valle del Colca y sus artesanas</h3><p>Comunidades, talleres abiertos y experiencias culturales en Chivay, Yanque y Cabanaconde.</p><span class="blog-card__link">Leer más →</span></div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<a href="https://wa.me/51954000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-float__tooltip">¿Tienes dudas?</span></a>
+
+<footer class="footer"><div class="container"><div class="footer__bottom" style="border-top:none"><p>© 2025 Maki Colca Global</p><div class="footer__legal-links"><a href="terminos.html">Términos</a><a href="privacidad.html">Privacidad</a></div><p><a href="../index.html" style="color:rgba(242,232,217,.4)">← Volver al inicio</a></p></div></div></footer>
+
+<script src="../js/translations.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
