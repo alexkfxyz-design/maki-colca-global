@@ -166,10 +166,14 @@ const revObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.reveal:not(.visible)').forEach(el => revObs.observe(el));
+  // Fallback for mobile/slow connections
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 1500);
 });
 
 /* ── Counter animation ──────────────────────────────────────────────────── */
